@@ -5,10 +5,12 @@ using namespace std;
 class Complex {
 	double Re;
 	double Im; 
+
 	public:
-		Complex(double aRe = 0, double aIm = 0);
-		Complex(const Complex &);
-		~Complex();
+	Complex(double aRe = 0, double aIm = 0);
+	Complex(const Complex &);
+	~Complex();
+
 	void Set (double aRe, double aIm = 0);
 	operator double();
 	double abs();
