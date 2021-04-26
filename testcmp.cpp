@@ -2,9 +2,10 @@
 #include "mycomplex.h"
 using namespace std;
 int main(){	//тестирование класса комплексных чисел
- 	Complex A,B(-4), C(23.0, 45.9);
+
+ 	Complex A, B(-4), C(23.0, 45.9);
 	cout << A << "," << B << "," << C << endl;
-	A=B+C;
+	A = B + C;
 	cout << "A=B+C,A=" << A << endl;
 	Complex M = B - C;
 	cout << "M = B - C, M = " << M << endl;
