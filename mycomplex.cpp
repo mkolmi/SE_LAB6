@@ -2,7 +2,10 @@
 #include   <cmath>
 #include "mycomplex.h"
 using namespace std;
-
+/**
+*@param a_Re - Real part of complex value
+*@param a_Im - Imagine part of complex value
+*/
 Complex::Complex(double a_Re, double a_Im) {
 	Re = a_Re;
 	Im = a_Im;
@@ -13,11 +16,15 @@ Complex::Complex(const Complex & aRval) {
 	Im = aRval.Im;
 }
 
+/**@brief Destructor for class Complex. Set real and imagine to null
+*/
 Complex::~Complex() {
 	Re = 0.0;
 	Im = 0.0;
 }
 
+/**@brief Initialize field of complex class
+*/
 void Complex::Set(double a_Re, double a_Im) {
 	Re = a_Re;
 	Im = a_Im;
@@ -27,10 +34,13 @@ Complex::operator double() {
 	return abs();
 }
 
+/**@brief Finding abs of complex value
+*/
 double Complex::abs() {
 	return sqrt(Re * Re + Im * Im);
 }
 
+//Operators for arithmetic operations with complex values
 Complex Complex::operator + (const Complex & aRval) {
 	Complex Result;
 	Result.Re = Re + aRval.Re;
@@ -134,12 +144,18 @@ Complex & Complex::operator = (const double & aRval) {
   	return *this;
 }
 
+/**
+*@return stream
+*/
 istream & operator >> (istream & stream, Complex & aRval) {
   	char tmp[256];
   	stream >> aRval.Re >> aRval.Im >> tmp;
   	return stream;
 }
 
+/**
+*@return stream
+*/
 ostream & operator << (ostream & stream, Complex & aRval)
 {
   	stream << aRval.Re;
